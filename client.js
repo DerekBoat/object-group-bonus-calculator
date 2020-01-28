@@ -32,7 +32,42 @@ const employees = [
 ];
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
+let reviewRating = 3;
+let annualSalary = 47000; 
+let employeeNumber = 4;
+for (employee of employees) {
+  console.log(employee.annualSalary);
+}
+if (reviewRating === 3 && employeeNumber.length === 4 && annualSalary < 65000){
+  let bonusPercentage = 0.08;
+  let bonusTotal= annualSalary*bonusPercentage;
+  let totalCompensation = annualSalary + bonusTotal;
+  
+}
+ else if (reviewRating === 4 && employeeNumber.length === 4 && annualSalary < 65000){
+    let bonusPercentage = 0.1;
+    let bonusTotal= annualSalary*bonusPercentage;
+    let totalCompensation = annualSalary + bonusTotal;
+} 
+else if (reviewRating === 5 && employeeNumber.length === 4 && annualSalary < 65000){
+  let bonusPercentage = 0.14;
+  let bonusTotal= annualSalary*bonusPercentage;
+  let totalCompensation = annualSalary + bonusTotal;
 
+} 
+else if (reviewRating === 4){
+  let bonusPercentage = 0.06;
+  let bonusTotal= annualSalary*bonusPercentage;
+  let totalCompensation = annualSalary + bonusTotal;
+
+} else if (reviewRating === 5 ){
+  let bonusPercentage = 0.1;
+  let bonusTotal= annualSalary*bonusPercentage;
+  let totalCompensation = annualSalary + bonusTotal;
+} else if (reviewRating)
+
+
+// objectReturner(employees);
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
 // What is the fewest lines of code I can write and test to get just a little closer?
