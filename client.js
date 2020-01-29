@@ -32,40 +32,133 @@ const employees = [
 ];
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
-let reviewRating = 3;
-let annualSalary = 47000; 
-let employeeNumber = 4;
-for (employee of employees) {
-  console.log(employee.annualSalary);
-}
-if (reviewRating === 3 && employeeNumber.length === 4 && annualSalary < 65000){
-  let bonusPercentage = 0.08;
-  let bonusTotal= annualSalary*bonusPercentage;
-  let totalCompensation = annualSalary + bonusTotal;
-  
-}
- else if (reviewRating === 4 && employeeNumber.length === 4 && annualSalary < 65000){
-    let bonusPercentage = 0.1;
-    let bonusTotal= annualSalary*bonusPercentage;
-    let totalCompensation = annualSalary + bonusTotal;
-} 
-else if (reviewRating === 5 && employeeNumber.length === 4 && annualSalary < 65000){
-  let bonusPercentage = 0.14;
-  let bonusTotal= annualSalary*bonusPercentage;
-  let totalCompensation = annualSalary + bonusTotal;
+let newArray = [];
+let rating3Bonus = 0.04;
+let rating4Bonus = 0.06;
+let rating5Bonus = 0.1;
+let employeeNumber4Bonus = 0.05;
+let over65000 = 0.01;
+let bonusCap = 0.13;
 
-} 
-else if (reviewRating === 4){
-  let bonusPercentage = 0.06;
-  let bonusTotal= annualSalary*bonusPercentage;
-  let totalCompensation = annualSalary + bonusTotal;
 
-} else if (reviewRating === 5 ){
-  let bonusPercentage = 0.1;
-  let bonusTotal= annualSalary*bonusPercentage;
-  let totalCompensation = annualSalary + bonusTotal;
-} else if (reviewRating)
+function employeeBonusCalculator(bonusPercentage){
+  console.log("in function");
+  for (person of employees) {
+    console.log("in for loop");
+    console.log(person.reviewRating);
+    console.log(person.employeeNumber);
+    console.log(person.annualSalary);
+    let thingLength = person.employeeNumber;
+    let employeeNumberLength = 0;
+    employeeNumberLength = thingLength.length;
 
+    if (person.reviewRating == 3 && employeeNumberLength == 4 && person.annualSalary < 65000){
+      bonusPercentage = rating3Bonus + employeeNumber4Bonus;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      console.log(newEmpObj.bonusPercentage);
+      newArray.push(newEmpObj);
+    }
+     else if (person.reviewRating == 4 && employeeNumberLength == 4 && person.annualSalary < 65000){
+     bonusPercentage = rating4Bonus + employeeNumber4Bonus;
+     let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 5 && employeeNumberLength == 4 && person.annualSalary < 65000){
+     bonusPercentage = bonusCap;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 3 && employeeNumberLength == 5 && person.annualSalary < 65000){
+     bonusPercentage = rating3Bonus;
+     let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 4 && employeeNumberLength == 5 && person.annualSalary < 65000){
+    bonusPercentage = rating4Bonus;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 5 && employeeNumberLength == 5 && person.annualSalary < 65000){
+     bonusPercentage = rating5Bonus;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 3 && employeeNumberLength == 4 && person.annualSalary > 65000){
+     bonusPercentage = rating3Bonus + employeeNumber4Bonus - over65000;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    }
+     else if (person.reviewRating == 4 && employeeNumberLength == 4 && person.annualSalary > 65000){
+     bonusPercentage = rating4Bonus + employeeNumber4Bonus - over65000;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 5 && employeeNumberLength == 4 && person.annualSalary > 65000){
+     bonusPercentage = bonusCap;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 3 && employeeNumberLength == 5 && person.annualSalary > 65000){
+     bonusPercentage = rating3Bonus - over65000;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 4 && employeeNumberLength == 5 && person.annualSalary > 65000){
+     bonusPercentage = rating4Bonus - over65000;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    } 
+    else if (person.reviewRating == 5 && employeeNumberLength == 5 && person.annualSalary > 65000){
+     bonusPercentage = rating5Bonus - over65000;
+      let newEmpObj = {
+        name: person.name,
+        bonusPercentage: bonusPercentage
+      }
+      newArray.push(newEmpObj);
+    }
+    else if (person.reviewRating < 3){
+      console.log("you should be a better employee", person.name);
+    }
+      
+    }
+  }
+
+
+employeeBonusCalculator();
+  console.log(newArray);
 
 // objectReturner(employees);
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
@@ -75,4 +168,4 @@ else if (reviewRating === 4){
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
-console.log( employees );
+
